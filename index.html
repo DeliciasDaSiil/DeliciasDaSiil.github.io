@@ -19,6 +19,19 @@
       background-color: #f9d3e3;
       padding: 0;
     }
+
+.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #fff0f6;
+}
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -36,17 +49,6 @@
 .whatsapp:hover {
   background: #1ebe5d;
 }
-
-.banner {
-  width: 100%;
-  height: 300px;
-  display: block;
-  background-color: #fff0f6; /* fundo neutro pra preencher se sobrar espaço */
-}
-    .container {
-      padding: 20px;
-      text-align: center;
-    }
 
     .cards {
       display: flex;
@@ -196,9 +198,13 @@
       <li>🍭 Pirulitos de chocolate</li>
       <li>✨ E muito mais!</li>
     </ul>
-	<img src="src/bolo01.jpg" alt="Exemplo">
-	<img src="src/bolo02.jpg" alt="Exemplo">
-	<img src="src/doces01.jpg" alt="Exemplo">
+<h3>📸 Nossos Doces</h3>
+<div class="galeria">
+  <img src="src/bolo01.jpg" alt="Bolo Personalizado">
+  <img src="src/doces01.jpg" alt="Doces Gourmet">
+  <img src="src/bolo02.jpg" alt="Bolo Criativo">
+  <img src="src/pirulito01.jpg" alt="Pirulito de Chocolate">
+</div>
   </div>
 
   <div id="papelaria" class="page">
@@ -212,9 +218,16 @@
       <li>📦 Caixinhas decoradas</li>
       <li>✨ Montamos em qualquer tema!</li>
     </ul>
-	<img src="src/topo01.jpg" alt="Exemplo">
-	<img src="src/sacolinhas01.jpg" alt="Exemplo">
-	<img src="src/piramide01.jpg" alt="Exemplo">
+  <h3>📸 Nossos Personalizados</h3>
+  <div class="galeria">
+    <img src=".jpg" alt="Foto 1">
+    <img src="src/topo01.jpg" alt="Foto 2">
+    <img src="src/sacolinhas01.jpg" alt="Foto 3">
+    <img src="src/piramide01.jpg" alt="Foto 4">
+  </div>
+</div>
+
+</div>
   </div>
 
   <div id="pedido" class="page">
@@ -237,8 +250,8 @@
   </div>
 
   <footer>
-    &copy; 2025 🍭 Delícias e Personalizados da Siil
-  </footer>
+  <p>&copy; 2025 🍭 Delícias e Personalizados da Siil</p>
+</footer>
 
   <script>
     function showPage(id) {
