@@ -47,10 +47,10 @@
     <h1>Delícias e Personalizados da Siil</h1>
     <img class="banner" src="https://i.imgur.com/UMFJwMg.png" alt="Boneca com avental, tesoura e batedeira">
     <nav>
-      <a href="#" onclick="showPage('home', event, this)" class="active-link">Home</a>
-      <a href="#" onclick="showPage('confeitaria', event, this)">Confeitaria</a>
-      <a href="#" onclick="showPage('papelaria', event, this)">Papelaria</a>
-      <a href="#" onclick="showPage('pedido', event, this)">Fazer Pedido</a>
+      <a href="#" data-page="home" class="active-link">Home</a>
+      <a href="#" data-page="confeitaria">Confeitaria</a>
+      <a href="#" data-page="papelaria">Papelaria</a>
+      <a href="#" data-page="pedido">Fazer Pedido</a>
     </nav>
   </header>
 
@@ -100,28 +100,29 @@
   </footer>
 
   <script>
-    function showPage(pageId, event, element) {
-      if (event) event.preventDefault();
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const pageId = this.dataset.page;
 
-      // Mostrar página
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
 
-      // Atualizar destaque do menu
-      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
-      if (element) element.classList.add('active-link');
-    }
-
-    document.getElementById('formPedido').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const tipo = document.getElementById('tipo').value;
-      const detalhes = document.getElementById('detalhes').value;
-      const mensagem = Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes};
-      const numeroWhatsApp = '5521966325658'; // Substitua com seu número real
-      const url = https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)};
-      window.open(url, '_blank');
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
+      this.classList.add('active-link');
     });
-  </script>
+  });
+
+  document.getElementById('formPedido').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const tipo = document.getElementById('tipo').value;
+    const detalhes = document.getElementById('detalhes').value;
+    const mensagem = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
+    const numeroWhatsApp = '5521966325658';
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+  });
+</script>
 </body>
 </html>
