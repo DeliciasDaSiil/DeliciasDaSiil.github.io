@@ -262,6 +262,8 @@ body.loaded {
   <label><input type="radio" name="arte" value="Tenho imagem de referência" required onclick="mostrarUpload(true)"> Tenho imagem de referência</label><br>
   <label><input type="radio" name="arte" value="Quero que crie a arte" required onclick="mostrarUpload(false)"> Quero que crie a arte</label>
 </div>
+<label>📅 Data do evento:</label>
+<input type="date" id="dataEvento" required>
 
 <div id="uploadImagem" style="display:none; margin-top: 10px;">
   <label>📸 Envie sua imagem:</label>
@@ -303,11 +305,19 @@ const detalhes = document.getElementById('detalhes').value;
 const arte = document.querySelector('#formPedido input[name="arte"]:checked')?.value || "Não informado";
 const imagem = document.getElementById('imagemArte').files[0];
 const imagemInfo = imagem ? `Imagem enviada: ${imagem.name}` : "Nenhuma imagem enviada.";
+const dataEventoRaw = document.getElementById('dataEvento').value;
+let dataEvento = "Não informado";
+
+if (dataEventoRaw) {
+  const partes = dataEventoRaw.split("-");
+  dataEvento = `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
 
 const msg = `Olá! Meu nome é ${nome}.
 Gostaria de fazer um pedido de *${tipo}*.
 🎨 Tema: ${tema}
 🎀 Cores: ${cores}
+🎉 Data do evento: ${dataEvento}
 📝 Detalhes: *${detalhes}*
 🖼️ Arte: ${arte}
 📎 ${imagemInfo}`;
