@@ -292,7 +292,7 @@ const cores = document.getElementById('cores').value;
 const detalhes = document.getElementById('detalhes').value;
 const arte = document.querySelector('#formPedido input[name="arte"]:checked')?.value || "Não informado";
 const imagem = document.getElementById('imagemArte').files[0];
-const imagemInfo = imagem ? `Imagem enviada: ${imagem.name}` : "Sem imagem enviada";
+const imagemInfo = imagem ? `Imagem enviada: ${imagem.name}` : "Nenhuma imagem enviada.";
 
 const msg = `Olá! Meu nome é ${nome}.
 Gostaria de fazer um pedido de *${tipo}*.
