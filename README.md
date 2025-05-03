@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f2f8fc; color: #333; }
     header { background-color: #a3c4f3; padding: 20px; text-align: center; color: #fff; }
     nav { margin-top: 10px; }
-    nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    nav a.active-link {
+      text-decoration: underline;
+      background-color: #6a9fe3;
+    }
     .page { display: none; padding: 20px; }
     .active { display: block; }
     footer { background-color: #a3c4f3; text-align: center; padding: 10px; color: #fff; }
@@ -36,10 +47,10 @@
     <h1>Delícias e Personalizados da Siil</h1>
     <img class="banner" src="https://i.imgur.com/UMFJwMg.png" alt="Boneca com avental, tesoura e batedeira">
     <nav>
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('confeitaria')">Confeitaria</a>
-      <a href="#" onclick="showPage('papelaria')">Papelaria</a>
-      <a href="#" onclick="showPage('pedido')">Fazer Pedido</a>
+      <a href="#" onclick="showPage('home', event, this)" class="active-link">Home</a>
+      <a href="#" onclick="showPage('confeitaria', event, this)">Confeitaria</a>
+      <a href="#" onclick="showPage('papelaria', event, this)">Papelaria</a>
+      <a href="#" onclick="showPage('pedido', event, this)">Fazer Pedido</a>
     </nav>
   </header>
 
@@ -68,19 +79,19 @@
   <section id="pedido" class="page">
     <h2>Fazer Pedido</h2>
     <form id="formPedido">
-      <label>Nome:</label>
-      <input type="text" id="nome" required>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
 
-      <label>Escolha o tipo de produto:</label>
-      <select id="tipo">
+      <label for="tipo">Escolha o tipo de produto:</label>
+      <select id="tipo" name="tipo">
         <option value="Confeitaria">Confeitaria</option>
         <option value="Papelaria">Papelaria</option>
       </select>
 
-      <label>Detalhes do pedido:</label>
-      <textarea id="detalhes" rows="5" required></textarea>
+      <label for="detalhes">Detalhes do pedido:</label>
+      <textarea id="detalhes" name="detalhes" rows="5" required></textarea>
 
-      <button type="submit">Enviar para WhatsApp</button>
+      <button type="submit" aria-label="Enviar pedido para o WhatsApp">Enviar para WhatsApp</button>
     </form>
   </section>
 
@@ -89,9 +100,16 @@
   </footer>
 
   <script>
-    function showPage(pageId) {
+    function showPage(pageId, event, element) {
+      if (event) event.preventDefault();
+
+      // Mostrar página
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
+
+      // Atualizar destaque do menu
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
+      if (element) element.classList.add('active-link');
     }
 
     document.getElementById('formPedido').addEventListener('submit', function(e) {
@@ -100,7 +118,7 @@
       const tipo = document.getElementById('tipo').value;
       const detalhes = document.getElementById('detalhes').value;
       const mensagem = Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes};
-      const numeroWhatsApp = '5599999999999'; // Substitua com seu número
+      const numeroWhatsApp = '5599999999999'; // Substitua com seu número real
       const url = https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)};
       window.open(url, '_blank');
     });
