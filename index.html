@@ -107,6 +107,24 @@
     .card button:hover {
       background-color: #6a9fe3;
     }
+.card-info {
+  background-color: #e3f0ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card-info h3 {
+  margin-top: 0;
+  color: #357ab7;
+}
+
+.card-info p {
+  margin: 10px 0;
+}
+
 
     ul {
       padding-left: 20px;
@@ -162,6 +180,25 @@
       margin-top: 30px;
       border-top: 2px solid #a3c4f3;
     }
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -169,8 +206,6 @@
     <h1>🍭 Delícias e Personalizados da Siil</h1>
     <nav>
       <a href="#" onclick="showPage('home', event, this)" class="active-link">🏠 Home</a>
-      <a href="#" onclick="showPage('confeitaria', event, this)">🍰 Confeitaria</a>
-      <a href="#" onclick="showPage('papelaria', event, this)">✂️ Papelaria</a>
       <a href="#" onclick="showPage('pedido', event, this)">📋 Pedido</a>
     </nav>
   </header>
@@ -181,17 +216,16 @@
 
     <div class="cards">
       <div class="card">
-        <img src="https://i.imgur.com/tkX37E7.jpg" alt="Confeitaria">
+        <img src="src/banner.png" alt="Confeitaria">
         <h3>Confeitaria</h3>
         <button onclick="showPage('confeitaria', event)">Ver Mais</button>
       </div>
       <div class="card">
-        <img src="https://i.imgur.com/nNbyBtI.jpg" alt="Papelaria">
+        <img src="src/banner.png" alt="Papelaria">
         <h3>Papelaria</h3>
         <button onclick="showPage('papelaria', event)">Ver Mais</button>
       </div>
     </div>
-
     <div class="social-links">
       <a href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Instagram Confeitaria</a>
       <a href="https://www.instagram.com/personalizadosdasiil0?igsh=eHM5dXB2MjBvc2kw" target="_blank">✂️ Instagram Papelaria</a>
@@ -208,6 +242,11 @@
       <li>🍭 Pirulitos de chocolate</li>
       <li>✨ E muito mais!</li>
     </ul>
+<div class="galeria">
+    <img src="imagens/doces1.jpg" alt="Trufas personalizadas">
+    <img src="imagens/doces2.jpg" alt="Brigadeiros gourmet">
+    <img src="imagens/doces3.jpg" alt="Pirulitos de chocolate">
+  </div>
 <div class="social-links">
   <a href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Ver no Instagram</a>
 </div>
@@ -223,6 +262,11 @@
       <li>📦 Caixinhas decoradas</li>
       <li>✨ Montamos em qualquer tema!</li>
     </ul>
+ <div class="galeria">
+    <img src="imagens/papelaria1.jpg" alt="Convite personalizado">
+    <img src="imagens/papelaria2.jpg" alt="Tags para lembrancinhas">
+    <img src="imagens/papelaria3.jpg" alt="Topper de bolo">
+  </div>
 <div class="social-links">
   <a href="https://www.instagram.com/personalizadosdasiil0?igsh=eHM5dXB2MjBvc2kw" target="_blank">✂️ Ver no Instagram</a>
 </div>
