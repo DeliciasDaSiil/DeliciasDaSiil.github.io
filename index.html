@@ -149,7 +149,7 @@
 <body>
 
   <header>
-    <img class="banner" src="src/banner1.png" alt="Banner Delícias e Personalizados da Siil">
+    <img class="banner" src="https://i.imgur.com/UMFJwMg.png" alt="Banner Delícias e Personalizados da Siil">
   </header>
 
   <div class="container">
@@ -234,7 +234,9 @@
       const nome = document.getElementById('nome').value;
       const tipo = document.getElementById('tipo').value;
       const detalhes = document.getElementById('detalhes').value;
-      const msg = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
+      const msg = `Olá! Meu nome é ${nome}. 
+Gostaria de fazer um pedido de ${tipo}: 
+*${detalhes}*`;
       const url = `https://wa.me/5521966325658?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     });
