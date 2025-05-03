@@ -245,19 +245,35 @@
   <div id="pedido" class="page">
     <h2>📋 Fazer Pedido</h2>
     <form id="formPedido">
-      <label>👤 Nome:</label>
-      <input type="text" id="nome" required>
+  <label>👤 Nome:</label>
+  <input type="text" id="nome" required>
 
-      <label>📦 Tipo de produto:</label>
-      <select id="tipo">
-        <option value="Confeitaria">🍰 Confeitaria</option>
-        <option value="Papelaria">✂️ Papelaria</option>
-      </select>
+  <label>📦 Tipo de produto:</label>
+  <select id="tipo">
+    <option value="Confeitaria">🍰 Confeitaria</option>
+    <option value="Papelaria">✂️ Papelaria</option>
+  </select>
 
-      <label>📝 Detalhes do pedido:</label>
-      <textarea id="detalhes" rows="5" required></textarea>
+  <label>🎨 Tema desejado:</label>
+  <input type="text" id="tema" placeholder="Ex: Unicórnio, Princesa, Futebol" required>
 
-      <button type="submit">📲 Enviar para WhatsApp</button>
+  <label>🎀 Cores principais:</label>
+  <input type="text" id="cores" placeholder="Ex: Rosa, dourado e branco" required>
+
+  <label>📝 Detalhes do pedido:</label>
+  <textarea id="detalhes" rows="4" required></textarea>
+
+  <label>🖼️ Você já tem uma imagem da arte ou quer que eu crie? (faço o mais parecido possível)</label>
+<div>
+  <label><input type="radio" name="arte" value="Tenho imagem de referência" required onclick="mostrarUpload(true)"> Tenho imagem de referência</label><br>
+  <label><input type="radio" name="arte" value="Quero que crie a arte" required onclick="mostrarUpload(false)"> Quero que crie a arte</label>
+</div>
+
+<div id="uploadImagem" style="display:none; margin-top: 10px;">
+  <label>📸 Envie sua imagem:</label>
+  <input type="file" id="imagemArte" accept="image/*">
+</div>
+<button type="submit">📲 Enviar para WhatsApp</button>
     </form>
   </div>
 
