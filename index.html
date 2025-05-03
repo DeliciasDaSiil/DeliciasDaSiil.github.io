@@ -6,6 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
  <style>
+.card {
+  /* o resto das configs que já tem */
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.4) 0%, rgba(255,182,193,0.5) 25%, rgba(173,216,230,0.5) 50%, rgba(255,255,255,0.4) 75%);
+  background-size: 200% 200%;
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: brilhoColorido 1.2s linear;
+}
+
+@keyframes brilhoColorido {
+  0% {
+    transform: rotate(25deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(25deg) translateX(100%);
+  }
+}
+
+
 .confetti {
   position: fixed;
   top: 0;
