@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
   <style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('src/banner.png'); /* Define a imagem como fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Alinha a imagem no centro */
+    background-attachment: fixed; /* Torna o fundo fixo ao rolar a página */
+    color: #333;
+  }
+
     body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f2f8fc; color: #333; }
     header { background-color: #a3c4f3; padding: 20px; text-align: center; color: #fff; }
     nav { margin-top: 10px; }
@@ -45,12 +56,12 @@
 <body>
   <header>
     <h1>Delícias e Personalizados da Siil</h1>
-    <img class="banner" src="src/banner.png" alt="Boneca com avental, tesoura e batedeira">
+    <img class="banner" src="https://i.imgur.com/UMFJwMg.png" alt="Boneca com avental, tesoura e batedeira">
     <nav>
-      <a href="#" data-page="home" class="active-link">Home</a>
-      <a href="#" data-page="confeitaria">Confeitaria</a>
-      <a href="#" data-page="papelaria">Papelaria</a>
-      <a href="#" data-page="pedido">Fazer Pedido</a>
+      <a href="#" onclick="showPage('home', event, this)" class="active-link">Home</a>
+      <a href="#" onclick="showPage('confeitaria', event, this)">Confeitaria</a>
+      <a href="#" onclick="showPage('papelaria', event, this)">Papelaria</a>
+      <a href="#" onclick="showPage('pedido', event, this)">Fazer Pedido</a>
     </nav>
   </header>
 
@@ -100,29 +111,28 @@
   </footer>
 
   <script>
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const pageId = this.dataset.page;
+    function showPage(pageId, event, element) {
+      if (event) event.preventDefault();
 
+      // Mostrar página
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(pageId).classList.add('active');
 
-      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
-      this.classList.add('active-link');
-    });
-  });
+      // Atualizar destaque do menu
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
+      if (element) element.classList.add('active-link');
+    }
 
-  document.getElementById('formPedido').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const tipo = document.getElementById('tipo').value;
-    const detalhes = document.getElementById('detalhes').value;
-    const mensagem = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
-    const numeroWhatsApp = '5521966325658';
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
-  });
-</script>
+    document.getElementById('formPedido').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const tipo = document.getElementById('tipo').value;
+      const detalhes = document.getElementById('detalhes').value;
+      const mensagem = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
+      const numeroWhatsApp = '5521966325658';
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html>
