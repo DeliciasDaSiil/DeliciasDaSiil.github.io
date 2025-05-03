@@ -283,14 +283,25 @@ function mostrarUpload(exibir) {
 
     document.getElementById('formPedido').addEventListener('submit', function(e){
       e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const tipo = document.getElementById('tipo').value;
-      const detalhes = document.getElementById('detalhes').value;
-      const msg = `Olá! Meu nome é ${nome}. 
-Gostaria de fazer um pedido de ${tipo}: 
-*${detalhes}*`;
-      const url = `https://wa.me/5521966325658?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank');
+    const nome = document.getElementById('nome').value;
+const tipo = document.getElementById('tipo').value;
+const tema = document.getElementById('tema').value;
+const cores = document.getElementById('cores').value;
+const detalhes = document.getElementById('detalhes').value;
+const arte = document.querySelector('#formPedido input[name="arte"]:checked')?.value || "Não informado";
+const imagem = document.getElementById('imagemArte').files[0];
+const imagemInfo = imagem ? `Imagem enviada: ${imagem.name}` : "Sem imagem enviada";
+
+const msg = `Olá! Meu nome é ${nome}.
+Gostaria de fazer um pedido de *${tipo}*.
+🎨 Tema: ${tema}
+🎀 Cores: ${cores}
+📝 Detalhes: ${detalhes}
+🖼️ Arte: ${arte}
+📎 ${imagemInfo}`;
+
+const url = `https://wa.me/5521966325658?text=${encodeURIComponent(msg)}`;
+window.open(url, '_blank');
     });
   </script>
 <a href="https://wa.me/5521966325658" class="whatsapp" target="_blank">📲</a>
