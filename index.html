@@ -1,62 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
-  <meta name="description" content="Doces personalizados e papelaria criativa para festas e ocasiões especiais. Encomende agora pelo WhatsApp!">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fb;
+      background-color: #fff0f6;
       color: #333;
-      opacity: 0;
       transition: opacity 1s ease;
     }
 
     header {
-      background-color: #d5e7f9;
+      text-align: center;
+      background-color: #f9d3e3;
+      padding: 0;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .container {
       padding: 20px;
       text-align: center;
-      color: #2c3e50;
-      border-bottom: 2px solid #a3c4f3;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      margin: 0 8px;
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      background-color: #eaf4fc;
-    }
-
-    nav a:hover,
-    nav a.active-link {
-      background-color: #a3c4f3;
-      color: #fff;
-    }
-
-    .page {
-      padding: 30px 20px;
-      display: none;
-    }
-
-    .page.active {
-      display: block;
     }
 
     .cards {
@@ -64,176 +36,123 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .card {
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background-color: #fce4ec;
+      border-radius: 16px;
       padding: 20px;
       width: 280px;
       text-align: center;
-      transition: transform 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      background-color: #f8bbd0;
     }
 
-    .card img {
+    .page {
+      display: none;
+      padding: 20px;
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .section-img {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: #2c3e50;
-    }
-
-    .card button {
-      padding: 10px 20px;
-      background-color: #a3c4f3;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      border-radius: 20px;
-      font-size: 16px;
-      transition: background 0.3s ease;
-    }
-
-    .card button:hover {
-      background-color: #6a9fe3;
-    }
-.card-info {
-  background-color: #e3f0ff;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card-info h3 {
-  margin-top: 0;
-  color: #357ab7;
-}
-
-.card-info p {
-  margin: 10px 0;
-}
-
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-      list-style: "🌸 ";
-    }
-
-    button, form input, form select, form textarea {
-      border-radius: 12px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 12px;
-    }
-
-    button {
-      background-color: #a3c4f3;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #6a9fe3;
-      transform: translateY(-2px);
-    }
-
-    .social-links a {
+    .insta-btn {
       display: inline-block;
-      margin: 10px 6px;
-      padding: 8px 14px;
-      background-color: #eaf4fc;
-      color: #2c3e50;
-      border-radius: 20px;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #ec407a;
+      color: white;
+      border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s ease;
     }
 
-    .social-links a:hover {
-      background-color: #a3c4f3;
-      color: #fff;
+    .insta-btn:hover {
+      background: #d81b60;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #ec407a;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #d81b60;
     }
 
     footer {
-      background-color: #d5e7f9;
+      background: #f9d3e3;
       text-align: center;
-      padding: 12px;
-      color: #2c3e50;
+      padding: 10px;
       margin-top: 30px;
-      border-top: 2px solid #a3c4f3;
     }
-
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.galeria img {
-  max-width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
-}
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🍭 Delícias e Personalizados da Siil</h1>
-    <nav>
-      <a href="#" onclick="showPage('home', event, this)" class="active-link">🏠 Home</a>
-      <a href="#" onclick="showPage('pedido', event, this)">📋 Pedido</a>
-    </nav>
+    <img class="banner" src="https://i.imgur.com/UMFJwMg.png" alt="Banner Delícias e Personalizados da Siil">
   </header>
 
-  <section id="home" class="page active">
+  <div class="container">
     <h2>🎉 Bem-vindo!</h2>
     <p>Seja bem-vindo à <strong>Delícias e Personalizados da Siil</strong>! Aqui você encontra doces irresistíveis 🍬 e papelaria criativa ✂️ feita com carinho para cada ocasião.</p>
 
     <div class="cards">
-      <div class="card">
-        <img src="src/banner.png" alt="Confeitaria">
-        <h3>Confeitaria</h3>
-        <button onclick="showPage('confeitaria', event)">Ver Mais</button>
+      <div class="card" onclick="showPage('confeitaria')">
+        🍰 Confeitaria
       </div>
-      <div class="card">
-        <img src="src/banner.png" alt="Papelaria">
-        <h3>Papelaria</h3>
-        <button onclick="showPage('papelaria', event)">Ver Mais</button>
+      <div class="card" onclick="showPage('papelaria')">
+        ✂️ Papelaria
+      </div>
+      <div class="card" onclick="showPage('pedido')">
+        📋 Fazer Pedido
       </div>
     </div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Instagram Confeitaria</a>
-      <a href="https://www.instagram.com/personalizadosdasiil0?igsh=eHM5dXB2MjBvc2kw" target="_blank">✂️ Instagram Papelaria</a>
-      <a href="https://wa.me/5521966325658" target="_blank">💬 WhatsApp</a>
-    </div>
-  </section>
+  </div>
 
-  <section id="confeitaria" class="page">
+  <div id="confeitaria" class="page">
     <h2>🍰 Confeitaria</h2>
     <p>Doces personalizados para festas, lembrancinhas e datas especiais:</p>
     <ul>
@@ -242,83 +161,63 @@
       <li>🍭 Pirulitos de chocolate</li>
       <li>✨ E muito mais!</li>
     </ul>
-<div class="galeria">
-    <img src="imagens/doces1.jpg" alt="Trufas personalizadas">
-    <img src="imagens/doces2.jpg" alt="Brigadeiros gourmet">
-    <img src="imagens/doces3.jpg" alt="Pirulitos de chocolate">
+    <img class="section-img" src="https://i.imgur.com/tkX37E7.jpg" alt="Doces personalizados">
+    <a class="insta-btn" href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Ver no Instagram</a>
   </div>
-<div class="social-links">
-  <a href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Ver no Instagram</a>
-</div>
-  </section>
 
-  <section id="papelaria" class="page">
+  <div id="papelaria" class="page">
     <h2>✂️ Papelaria Personalizada</h2>
-    <p>Itens criativos e personalizados para deixar sua comemoração ainda mais especial:</p>
+    <p>Itens criativos para deixar sua comemoração ainda mais especial:</p>
     <ul>
       <li>🎉 Convites personalizados</li>
       <li>🏷️ Tags para lembrancinhas</li>
-      <li>🎈 Toppers para doces e bolos</li>
+      <li>🎈 Toppers para doces</li>
       <li>📦 Caixinhas decoradas</li>
       <li>✨ Montamos em qualquer tema!</li>
     </ul>
- <div class="galeria">
-    <img src="imagens/papelaria1.jpg" alt="Convite personalizado">
-    <img src="imagens/papelaria2.jpg" alt="Tags para lembrancinhas">
-    <img src="imagens/papelaria3.jpg" alt="Topper de bolo">
+    <img class="section-img" src="https://i.imgur.com/nNbyBtI.jpg" alt="Papelaria personalizada">
+    <a class="insta-btn" href="https://www.instagram.com/personalizadosdasiil0?igsh=eHM5dXB2MjBvc2kw" target="_blank">✂️ Ver no Instagram</a>
   </div>
-<div class="social-links">
-  <a href="https://www.instagram.com/personalizadosdasiil0?igsh=eHM5dXB2MjBvc2kw" target="_blank">✂️ Ver no Instagram</a>
-</div>
-  </section>
 
-  <section id="pedido" class="page">
+  <div id="pedido" class="page">
     <h2>📋 Fazer Pedido</h2>
     <form id="formPedido">
-      <label for="nome">👤 Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <label>👤 Nome:</label>
+      <input type="text" id="nome" required>
 
-      <label for="tipo">📦 Escolha o tipo de produto:</label>
-      <select id="tipo" name="tipo">
+      <label>📦 Tipo de produto:</label>
+      <select id="tipo">
         <option value="Confeitaria">🍰 Confeitaria</option>
         <option value="Papelaria">✂️ Papelaria</option>
       </select>
 
-      <label for="detalhes">📝 Detalhes do pedido:</label>
-      <textarea id="detalhes" name="detalhes" rows="4" required></textarea>
+      <label>📝 Detalhes do pedido:</label>
+      <textarea id="detalhes" rows="5" required></textarea>
 
       <button type="submit">📲 Enviar para WhatsApp</button>
     </form>
-  </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 🍭 Delícias e Personalizados da Siil</p>
+    &copy; 2025 🍭 Delícias e Personalizados da Siil
   </footer>
 
   <script>
-    function showPage(pageId, event, element) {
-      if (event) event.preventDefault();
+    function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
-      if (element) element.classList.add('active-link');
+      document.getElementById(id).classList.add('active');
     }
 
-    document.getElementById('formPedido').addEventListener('submit', function(e) {
+    document.getElementById('formPedido').addEventListener('submit', function(e){
       e.preventDefault();
       const nome = document.getElementById('nome').value;
       const tipo = document.getElementById('tipo').value;
       const detalhes = document.getElementById('detalhes').value;
-      const mensagem = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
-      const numeroWhatsApp = '5521966325658';
-      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-      alert("📲 Você será redirecionado para o WhatsApp para concluir seu pedido!");
+      const msg = `Olá! Meu nome é ${nome}. Gostaria de fazer um pedido de ${tipo}: ${detalhes}`;
+      const url = `https://wa.me/5521966325658?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     });
-
-    window.onload = () => {
-      document.body.style.opacity = '1';
-    };
   </script>
+
 </body>
 </html>
