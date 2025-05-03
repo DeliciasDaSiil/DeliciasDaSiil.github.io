@@ -13,6 +13,14 @@
       color: #333;
       transition: opacity 1s ease;
     }
+body {
+  opacity: 0;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
 
     header {
       text-align: center;
@@ -270,6 +278,10 @@
 </footer>
 
   <script>
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
 function mostrarUpload(temImagem) {
   if (temImagem) {
     alert("Por favor, envie a imagem para nosso WhatsApp após concluir o pedido!");
