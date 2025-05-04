@@ -359,6 +359,15 @@ body.loaded {
 
 
   <script>
+function showPage(id) {
+  const clickSound = document.getElementById('clickSound');
+  clickSound.currentTime = 0;
+  clickSound.play();
+
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
@@ -368,12 +377,6 @@ function mostrarUpload(temImagem) {
     alert("Por favor, envie a imagem para nosso WhatsApp após concluir o pedido!");
   }
 }
-
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
     document.getElementById('formPedido').addEventListener('submit', function(e){
       e.preventDefault();
     const nome = document.getElementById('nome').value;
@@ -422,6 +425,8 @@ window.open(url, '_blank');
   }
 
   setInterval(createConfetti, 300);
+
 </script>
+<audio id="clickSound" src="src/click.wav"></audio>
 </body>
 </html>
