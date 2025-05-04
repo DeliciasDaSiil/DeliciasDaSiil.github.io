@@ -287,16 +287,30 @@ footer .emoji {
 .galeria img:hover {
   transform: scale(1.05);
 }
+@keyframes blinkCursor {
+  0% { border-right-color: rgba(0,0,0,0.8); }
+  50% { border-right-color: transparent; }
+  100% { border-right-color: rgba(0,0,0,0.8); }
+}
+
+#welcomeText {
+  display: inline-block;
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgba(0,0,0,0.8);
+  animation: blinkCursor 0.7s steps(1) infinite;
+}
+
   </style>
 </head>
 <body>
-
   <header>
     <img class="banner" src="src/banner1.png" alt="Banner Delícias e Personalizados da Siil">
   </header>
 
   <div class="container">
-    <h2>🎉 Bem-vindo!</h2>
+    <h2 id="welcomeText"></h2>
     <p>Seja bem-vindo à <strong>Delícias e Personalizados da Siil</strong>! Aqui você encontra doces irresistíveis 🍬 e papelaria criativa ✂️ feita com carinho para cada ocasião.</p>
 
     <div class="cards">
@@ -467,5 +481,23 @@ window.open(url, '_blank');
 
 </script>
 <audio id="clickSound" src="src/click.wav"></audio>
+<script>
+  function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+      document.getElementById("welcomeText").innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 120);
+    }
+    else if (typeof fnCallback === 'function') {
+      fnCallback();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var text = "🎉 Bem-vindo!";
+    typeWriter(text, 0);
+  });
+</script>
 </body>
 </html>
