@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
  <style>
+  body {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='24' font-size='24'>🍭</text></svg>") 16 16, auto;
+}
+.card {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><polygon fill='%23FFD700' points='12,2 15,8.5 22,9.3 17,14 18.5,21 12,17.5 5.5,21 7,14 2,9.3 9,8.5 '/></svg>") 16 16, auto;
+}
 .card {
   /* o resto das configs que já tem */
   position: relative;
@@ -80,17 +86,12 @@ h1, h2, h3, h4, h5, h6 {
 }
   body {
   background: linear-gradient(to bottom, #ffe0f0, #e0f7fa, #fffde7);
-}
-  
-body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fff0f6;
       color: #333;
       transition: opacity 1s ease;
-    }
-body {
   opacity: 0;
 }
 
@@ -373,8 +374,6 @@ footer .emoji {
     <img src="src/piramide01.jpg" alt="Foto 4">
   </div>
 </div>
-
-</div>
   </div>
 
   <div id="pedido" class="page">
@@ -481,6 +480,7 @@ window.open(url, '_blank');
     confetti.classList.add('confetti');
     confetti.style.left = Math.random() * 100 + 'vw';
     confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
     document.body.appendChild(confetti);
 
     setTimeout(() => {
