@@ -319,6 +319,39 @@ footer .emoji {
   </style>
 </head>
 <body>
+  <!-- Aviso fixo no topo -->
+<div id="avisoImportante" style="
+position: fixed;
+top: -100px;
+left: 0;
+right: 0;
+background-color: #ffccf9;
+color: #333;
+padding: 12px 40px 12px 12px;
+text-align: center;
+font-weight: bold;
+z-index: 999;
+font-family: sans-serif;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+transition: top 0.5s ease;
+position: fixed;
+">
+<div>📢 Trabalhamos com sinal de 50% do valor adiantado e o restante no ato da entrega!</div>
+<div>📢 Aceitamos encomendas com o adiantamento de no mínimo 5 dias de antecedência!</div>
+<div>📢 ORÇAMENTO NÃO SEGURA VAGA!</div>
+<div>📢 O PEDIDO SÓ SERÁ CONFIRMADO APÓS O PAGAMENTO DOS 50% DO VALOR!</div>
+<!-- Botão de fechar -->
+<button onclick="fecharAviso()" style="
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+">✖️</button>
+</div>
   <header>
     <img class="banner" src="src/banner1.png" alt="Banner Delícias e Personalizados da Siil">
   </header>
@@ -424,6 +457,13 @@ footer .emoji {
 
 
   <script>
+     window.onload = function() {
+    document.getElementById("avisoImportante").style.top = "0";
+  }
+
+  function fecharAviso() {
+    document.getElementById("avisoImportante").style.top = "-100px";
+  }
 function showPage(id) {
   const clickSound = document.getElementById('clickSound');
   clickSound.currentTime = 0;
