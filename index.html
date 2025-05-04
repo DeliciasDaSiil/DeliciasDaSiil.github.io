@@ -226,11 +226,50 @@ body.loaded {
     }
 
     footer {
-      background: #f9d3e3;
-      text-align: center;
-      padding: 10px;
-      margin-top: 30px;
-    }
+  background: linear-gradient(270deg, #f9d3e3, #fce4ec, #ffe0f0, #f9d3e3);
+  background-size: 800% 800%;
+  animation: fundoAnimado 10s ease infinite;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: #555;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fundoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+footer .emoji {
+  animation: emojiBounce 2s ease-in-out infinite;
+  display: inline-block;
+  font-size: 22px;
+  margin: 0 5px;
+}
+
+@keyframes emojiBounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -352,10 +391,10 @@ body.loaded {
 
   </div>
 
-<footer>
-  <p>&copy; 2025 🍭 Delícias e Personalizados da Siil</p>
-  <a class="mapa-btn" href="https://maps.app.goo.gl/2PeFWBzT6oksBuecA" target="_blank">📍 Como Chegar</a>
-</footer>
+  <footer>
+    <p>&copy; 2025 🍭 Delícias e Personalizados da Siil <span class="emoji">✨</span><span class="emoji">🍬</span><span class="emoji">🎀</span></p>
+    <a class="mapa-btn" href="https://maps.app.goo.gl/2PeFWBzT6oksBuecA" target="_blank">📍 Como Chegar</a>
+  </footer>  
 
 
   <script>
