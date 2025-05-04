@@ -587,13 +587,23 @@ window.open(url, '_blank');
   });
 </script>
 <div class="depoimentos-container">
-  <button class="depoimentos-btn prev" onclick="mudarDepoimento(-1)">⬅️</button>
+  <button onclick="mudarDepoimento(-1)" style="all: unset; cursor: pointer; margin-right: 10px;">
+    <!-- SVG seta esquerda -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff69b4" viewBox="0 0 24 24">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  </button>
 
   <div class="depoimento">
     <p id="textoDepoimento">✨ Adorei o trabalho! Ficou tudo perfeito e do jeitinho que eu queria! ✨</p>
   </div>
 
-  <button class="depoimentos-btn next" onclick="mudarDepoimento(1)">➡️</button>
+  <button onclick="mudarDepoimento(1)" style="all: unset; cursor: pointer; margin-left: 10px;">
+    <!-- SVG seta direita -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff69b4" viewBox="0 0 24 24">
+      <path d="M9 6l6 6-6 6" />
+    </svg>
+  </button>
 </div>
 
 <footer>
