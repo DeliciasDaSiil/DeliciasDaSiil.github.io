@@ -10,14 +10,16 @@
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='24' font-size='24'>🍭</text></svg>") 16 16, auto;
 }
 .card {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><polygon fill='%23FFD700' points='12,2 15,8.5 22,9.3 17,14 18.5,21 12,17.5 5.5,21 7,14 2,9.3 9,8.5 '/></svg>") 16 16, auto;
-}
-.card {
-  /* o resto das configs que já tem */
   position: relative;
   overflow: hidden;
+  background-color: #fce4ec;
+  border-radius: 16px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-
 .card::before {
   content: "";
   position: absolute;
