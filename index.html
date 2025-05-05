@@ -113,15 +113,6 @@ body.loaded {
       background-color: #f9d3e3;
       padding: 0;
     }
-
-.banner {
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  background-color: #fff0f6;
-}
     .container {
       padding: 20px;
       text-align: center;
@@ -401,9 +392,99 @@ footer .emoji {
   margin-bottom: 5px;
   font-size: 16px;
 }
-  </style>
+.banner-animado {
+  background: linear-gradient(135deg, #ffe0f0, #fff7cc, #ccf2ff, #e0ffcc);
+  padding: 30px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.titulo-banner {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-banner span {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  margin: 0 2px;
+  color: #ff7eb9;
+  animation: corOndulada 6s infinite ease-in-out;
+}
+
+/* Animação suave de cor em onda */
+@keyframes corOndulada {
+  0%   { color: #ff7eb9; }
+  50%  { color: #7afcff; }
+  100% { color: #f70a74; }
+}
+
+/* Cada letra com delay diferente pra fazer efeito de onda */
+.titulo-banner span:nth-child(2)  { animation-delay: 0s; }
+.titulo-banner span:nth-child(3)  { animation-delay: 0.1s; }
+.titulo-banner span:nth-child(4)  { animation-delay: 0.2s; }
+.titulo-banner span:nth-child(5)  { animation-delay: 0.3s; }
+.titulo-banner span:nth-child(6)  { animation-delay: 0.4s; }
+.titulo-banner span:nth-child(7)  { animation-delay: 0.5s; }
+.titulo-banner span:nth-child(8)  { animation-delay: 0.6s; }
+.titulo-banner span:nth-child(9)  { animation-delay: 0.7s; }
+.titulo-banner span:nth-child(10) { animation-delay: 0.8s; }
+.titulo-banner span:nth-child(11) { animation-delay: 0.9s; }
+.titulo-banner span:nth-child(12) { animation-delay: 1.0s; }
+.titulo-banner span:nth-child(13) { animation-delay: 1.1s; }
+.titulo-banner span:nth-child(14) { animation-delay: 1.2s; }
+.titulo-banner span:nth-child(15) { animation-delay: 1.3s; }
+.titulo-banner span:nth-child(16) { animation-delay: 1.4s; }
+.titulo-banner span:nth-child(17) { animation-delay: 1.5s; }
+.titulo-banner span:nth-child(18) { animation-delay: 1.6s; }
+.titulo-banner span:nth-child(19) { animation-delay: 1.7s; }
+.titulo-banner span:nth-child(20) { animation-delay: 1.8s; }
+.titulo-banner span:nth-child(21) { animation-delay: 1.9s; }
+.titulo-banner span:nth-child(22) { animation-delay: 2.0s; }
+.titulo-banner span:nth-child(23) { animation-delay: 2.1s; }
+.titulo-banner span:nth-child(24) { animation-delay: 2.2s; }
+.titulo-banner span:nth-child(25) { animation-delay: 2.3s; }
+.titulo-banner span:nth-child(26) { animation-delay: 2.4s; }
+.titulo-banner span:nth-child(27) { animation-delay: 2.5s; }
+.titulo-banner span:nth-child(28) { animation-delay: 2.6s; }
+.titulo-banner span:nth-child(29) { animation-delay: 2.7s; }
+.titulo-banner span:nth-child(30) { animation-delay: 2.8s; }
+
+.bonequinha {
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+  animation: pulinho 1s infinite ease-in-out;
+}
+
+@keyframes pulinho {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+</style>
 </head>
 <body>
+  <div class="banner-animado">
+  <h1 class="titulo-banner">
+    <img src="src/bonequinha.png" alt="Bonequinha" class="bonequinha">
+    <span>D</span><span>e</span><span>l</span><span>í</span><span>c</span><span>i</span><span>a</span><span>s</span>
+    <span> </span>
+    <span>e</span>
+    <span> </span>
+    <span>P</span><span>e</span><span>r</span><span>s</span><span>o</span><span>n</span><span>a</span><span>l</span><span>i</span><span>z</span><span>a</span><span>d</span><span>o</span><span>s</span>
+    <span> </span>
+    <span>d</span><span>a</span>
+    <span> </span>
+    <span>S</span><span>i</span><span>i</span><span>l</span>
+  </h1>
+</div>
   <!-- Aviso fixo no topo -->
 <div id="avisoImportante" style="
 position: fixed;
@@ -437,10 +518,6 @@ position: fixed;
   color: #555;
 ">✖️</button>
 </div>
-  <header>
-    <img class="banner" src="src/banner1.png" alt="Banner Delícias e Personalizados da Siil">
-  </header>
-
   <div class="container">
     <h2 id="welcomeText"></h2>
     <p>Seja bem-vindo à <strong>Delícias e Personalizados da Siil</strong>! Aqui você encontra doces irresistíveis 🍬 e papelaria criativa ✂️ feita com carinho para cada ocasião.</p>
