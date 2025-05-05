@@ -7,9 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delícias e Personalizados da Siil</title>
  <style>
-  body {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='24' font-size='24'>🍭</text></svg>") 16 16, auto;
+  .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
 }
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #444;
+}
+.radio-option input {
+  transform: scale(1.2);
+}
+
 .card {
   position: relative;
   overflow: hidden;
@@ -88,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #d81b60;
 }
   body {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='24' font-size='24'>🍭</text></svg>") 16 16, auto;
   background: linear-gradient(to bottom, #ffe0f0, #e0f7fa, #fffde7);
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -502,10 +518,17 @@ position: fixed;
   <textarea id="detalhes" rows="4" required></textarea>
 
   <label>🖼️ Você já tem uma imagem da arte ou quer que eu crie? (faço o mais parecido possível)</label>
-<div>
-  <label><input type="radio" name="arte" value="Tenho imagem de referência" required onclick="mostrarUpload(true)"> Tenho imagem de referência</label><br>
-  <label><input type="radio" name="arte" value="Quero que crie a arte" required onclick="mostrarUpload(false)"> Quero que crie a arte</label>
-</div>
+  <div class="radio-group">
+    <label class="radio-option">
+      Tenho imagem de referência...
+      <input type="radio" name="arte" value="Tenho imagem de referência" required onclick="mostrarUpload(true)">
+    </label>
+    <label class="radio-option">
+      Quero que crie a arte 💖
+      <input type="radio" name="arte" value="Quero que crie a arte" required onclick="mostrarUpload(false)">
+    </label>
+  </div>
+  
 <label>📅 Data do evento:</label>
 <input type="date" id="dataEvento" required>
 
