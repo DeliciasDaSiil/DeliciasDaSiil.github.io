@@ -25,17 +25,6 @@
   transform: scale(1.2);
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  background-color: #fce4ec;
-  border-radius: 16px;
-  padding: 20px;
-  width: 280px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
 .card::before {
   content: "";
   position: absolute;
@@ -173,7 +162,9 @@ body.loaded {
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, background 0.3s ease;
-    }
+      position: relative;
+      overflow: hidden;
+    }    
 
     .card:hover {
       transform: translateY(-5px);
