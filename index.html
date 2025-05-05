@@ -255,6 +255,7 @@ body.loaded {
   color: #555;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 @keyframes fundoAnimado {
@@ -372,6 +373,43 @@ footer .emoji {
 .depoimentos-btn:hover {
   background: #ffd9fb;
 }
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+.sabores {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.sabores li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
   </style>
 </head>
 <body>
@@ -432,35 +470,45 @@ position: fixed;
   <div id="confeitaria" class="page">
     <h2>🍰 Confeitaria</h2>
 <a class="insta-btn" href="https://www.instagram.com/deliciasdasiil23?igsh=NW5kcHo2anFzM2Jq" target="_blank">🍰 Ver no Instagram</a>
-    <p>Doces personalizados para festas, lembrancinhas e datas especiais:</p>
+    <p>Doces personalizados para festas e datas especiais:</p>
     <ul>
       <li>🍫 Trufas personalizadas</li>
-      <li>🎂 Brigadeiros gourmet</li>
+      <li>🎂 Doces</li>
       <li>🍭 Pirulitos de chocolate</li>
       <li>✨ E muito mais!</li>
     </ul>
-<h3>📸 Nossos Doces</h3>
-<div class="galeria">
-  <img src="src/bolo01.jpg" alt="Bolo Personalizado">
-  <img src="src/doces01.jpg" alt="Doces Gourmet">
-  <img src="src/bolo02.jpg" alt="Bolo Criativo">
-</div>
-<a href="index.html" style="
-  display: inline-block;
-  background: linear-gradient(135deg, #ffd6e8, #ffe5ec);
-  color: #333;
-  padding: 16px 24px;
-  margin: 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-weight: bold;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  transition: transform 0.2s ease;
-">
-  🍬 Voltar para a Home
-</a>
-
+    <div class="catalogo">
+      <div class="item">
+        <img src="src/bolo01.jpg" alt="Bolo decorado">
+        <h3>Bolo personalizado no seu tema (Chantilly)</h3>
+        <ul class="sabores">
+          <li>Simples</li>
+          <li>Trufado</li>
+          <li>Gourmet</li>
+        </ul>
+        <hr>
+        <p class="preco">
+          <h3>Recheios</h3>
+          <li><strong>Simples</strong></li>a partir de R$ 135,00
+          <li><strong>Trufado</strong></li>a partir de R$ 150,00
+          <li><strong>Gourmet</strong></li>a partir de R$ 160,00</p>
+      </div>
+      <div class="item">
+        <img src="src/doces01.jpg" alt="Docinhos">
+        <h3>Docinhos Tradicionais</h3>
+  <ul class="sabores">
+    <li>Brigadeiro</li>
+    <li>Beijinho</li>
+    <li>Morango</li>
+    <li>Paçoca</li>
+    <li>Cajuzinho</li>
+    <li>Ninho</li>
+    <li>Casadinho</li>
+  </ul>
+  <hr>
+  <p class="preco"><strong>R$ 100,00 o cento</strong></p>
+      </div>
+  </div>
   </div>
   <div id="papelaria" class="page">
     <h2>✂️ Papelaria Personalizada</h2>
@@ -479,21 +527,6 @@ position: fixed;
     <img src="src/sacolinhas01.jpg" alt="Foto 3">
     <img src="src/piramide01.jpg" alt="Foto 4">
   </div>
-    <a href="index.html" style="
-  display: inline-block;
-  background: linear-gradient(135deg, #ffd6e8, #ffe5ec);
-  color: #333;
-  padding: 16px 24px;
-  margin: 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-weight: bold;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  transition: transform 0.2s ease;
-">
-  🍬 Voltar para a Home
-</a>
 </div>
   </div>
   <div id="pedido" class="page">
@@ -537,22 +570,6 @@ position: fixed;
   <input type="file" id="imagemArte" accept="image/*">
 </div>
 <button type="submit">📲 Enviar para WhatsApp</button>
-<a href="index.html" style="
-  display: inline-block;
-  background: linear-gradient(135deg, #ffd6e8, #ffe5ec);
-  color: #333;
-  padding: 16px 24px;
-  margin: 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-weight: bold;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  transition: transform 0.2s ease;
-">
-  🍬 Voltar para a Home
-</a>
-
 </form>
 
   </div>
