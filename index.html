@@ -393,7 +393,7 @@ footer .emoji {
   font-size: 16px;
 }
 .banner-animado {
-  margin-top: 100px;
+  margin-top: 0px;
   background: linear-gradient(135deg, #ffe0f0, #fff7cc, #ccf2ff, #e0ffcc);
   padding: 30px 0;
   text-align: center;
@@ -475,6 +475,27 @@ footer .emoji {
 </style>
 </head>
 <body>
+  
+<div id="avisoImportante" style="
+top: -100px;
+left: 0;
+right: 0;
+background-color: #ffccf9;
+color: #333;
+padding: 12px 40px 12px 12px;
+text-align: center;
+font-weight: bold;
+z-index: 999;
+font-family: sans-serif;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+transition: top 0.5s ease;
+position: relative;
+">
+<div>💸 Trabalhamos com sinal de <strong>50%</strong> do valor adiantado!</div>
+<div>📅 Encomendas com no mínimo <strong>5 dias</strong> de antecedência!</div>
+<div>⚠️ Orçamento <strong>não garante a vaga</strong>!</div>
+<div>✅ Pedido confirmado após pagamento do sinal!</div>
+</div>
   <div class="banner-animado">
   <h1 class="titulo-banner">
     <img src="src/bonequinha.png" alt="Bonequinha" class="bonequinha">
@@ -488,28 +509,6 @@ footer .emoji {
     <span> </span>
     <span>S</span><span>i</span><span>i</span><span>l</span>
   </h1>
-</div>
-  <!-- Aviso fixo no topo -->
-<div id="avisoImportante" style="
-position: fixed;
-top: -100px;
-left: 0;
-right: 0;
-background-color: #ffccf9;
-color: #333;
-padding: 12px 40px 12px 12px;
-text-align: center;
-font-weight: bold;
-z-index: 999;
-font-family: sans-serif;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-transition: top 0.5s ease;
-position: fixed;
-">
-<div>💸 Trabalhamos com sinal de <strong>50%</strong> do valor adiantado!</div>
-<div>📅 Encomendas com no mínimo <strong>5 dias</strong> de antecedência!</div>
-<div>⚠️ Orçamento <strong>não garante a vaga</strong>!</div>
-<div>✅ Pedido confirmado após pagamento do sinal!</div>
 </div>
   <div class="container">
     <h2 id="welcomeText"></h2>
