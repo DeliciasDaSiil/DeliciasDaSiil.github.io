@@ -715,21 +715,31 @@ window.open(url, '_blank');
 <audio id="clickSound" src="src/click.wav"></audio>
 <script>
   function typeWriter(text, i, fnCallback) {
-    if (i < text.length) {
-      document.getElementById("welcomeText").innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 120);
-    }
-    else if (typeof fnCallback === 'function') {
-      fnCallback();
-    }
+  if (i < text.length) {
+    document.getElementById("welcomeText").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+    setTimeout(function () {
+      typeWriter(text, i + 1, fnCallback);
+    }, 120);
+  } else if (typeof fnCallback === 'function') {
+    fnCallback();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  function startTyping() {
+    var text = "🎉 Bem-vindo! 🎉";
+    typeWriter(text, 0, function () {
+      // Espera 5 segundos e reinicia
+      setTimeout(function () {
+        document.getElementById("welcomeText").innerHTML = ""; // limpa
+        startTyping(); // reinicia
+      }, 3000);
+    });
   }
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var text = "🎉 Bem-vindo!";
-    typeWriter(text, 0);
-  });
+  startTyping();
+});
+
 </script>
 <div class="depoimentos-container">
   <button onclick="mudarDepoimento(-1)" style="all: unset; cursor: pointer; margin-right: 10px;">
