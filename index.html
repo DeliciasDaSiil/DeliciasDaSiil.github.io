@@ -61,6 +61,27 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .instagram-card {
+            background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .instagram-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(131, 58, 180, 0.3);
+        }
+
+        .instagram-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body class="gradient-bg">
@@ -146,6 +167,23 @@
                     Confeitaria
                 </h4>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Instagram Confeitaria -->
+                    <div class="instagram-card rounded-3xl p-8 text-white shadow-2xl hover-scale instagram-pulse" onclick="window.open('https://instagram.com/deliciasdasiil23', '_blank')">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center">
+                                <svg class="w-12 h-12 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <h5 class="text-2xl font-bold mb-3">Siga nosso Instagram!</h5>
+                            <p class="text-lg mb-4">@deliciasdasiil23</p>
+                            <p class="text-sm opacity-90">Veja nossas criações doces e inspire-se!</p>
+                            <div class="mt-6 bg-white/20 rounded-full py-2 px-4">
+                                <span class="text-sm font-semibold">Clique para seguir</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                         <div class="relative overflow-hidden rounded-2xl mb-6">
                             <img src="src/bolo01.jpg" alt="Bolos Personalizados" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
@@ -222,19 +260,19 @@
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Chocolate belga
+                                Chocolate preto ou branco
                             </li>
                             <li class="flex items-center text-sm text-gray-500">
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Recheios artesanais
+                                Recheios deliciosos
                             </li>
                             <li class="flex items-center text-sm text-gray-500">
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Embalagem especial
+                                Qualidade garantida
                             </li>
                         </ul>
                         <button class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 quote-btn">
@@ -250,6 +288,23 @@
                     Papelaria Personalizada
                 </h4>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Instagram Papelaria -->
+                    <div class="instagram-card rounded-3xl p-8 text-white shadow-2xl hover-scale instagram-pulse" onclick="window.open('https://instagram.com/personalizadosdasiil0', '_blank')">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center">
+                                <svg class="w-12 h-12 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <h5 class="text-2xl font-bold mb-3">Siga nosso Instagram!</h5>
+                            <p class="text-lg mb-4">@personalizadosdasiil0</p>
+                            <p class="text-sm opacity-90">Veja nossas criações personalizadas!</p>
+                            <div class="mt-6 bg-white/20 rounded-full py-2 px-4">
+                                <span class="text-sm font-semibold">Clique para seguir</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                         <div class="relative overflow-hidden rounded-2xl mb-6">
                             <img src="src/topo01.jpg" alt="Topo de Bolo" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
@@ -326,19 +381,19 @@
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Tema a sua escolha
+                                Montamos no seu tema
                             </li>
                             <li class="flex items-center text-sm text-gray-500">
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Impressão em alta qualidade
+                                Impressão vivas
                             </li>
                             <li class="flex items-center text-sm text-gray-500">
                                 <svg class="w-4 h-4 text-pink-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                Decoração ideal para sua festa
+                                Ideal para lembrancinha
                             </li>
                         </ul>
                         <button class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 quote-btn">
@@ -367,11 +422,11 @@
                     </p>
                     <div class="grid sm:grid-cols-2 gap-6 mb-8">
                         <div class="bg-white/10 blur-bg rounded-2xl p-6">
-                            <h4 class="text-2xl font-bold text-pink-300 mb-2">500+</h4>
+                            <h4 class="text-2xl font-bold text-pink-300 mb-2">1000+</h4>
                             <p class="text-sm">Eventos Realizados</p>
                         </div>
                         <div class="bg-white/10 blur-bg rounded-2xl p-6">
-                            <h4 class="text-2xl font-bold text-pink-300 mb-2">6 Anos</h4>
+                            <h4 class="text-2xl font-bold text-pink-300 mb-2">7 Anos</h4>
                             <p class="text-sm">de Experiência</p>
                         </div>
                     </div>
@@ -380,7 +435,7 @@
                             <svg class="w-6 h-6 text-pink-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span>Produtos 100% artesanais</span>
+                            <span>Produtos 100% personalizados</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-6 h-6 text-pink-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -392,7 +447,7 @@
                             <svg class="w-6 h-6 text-pink-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span>Entrega na Zona Oeste - RJ</span>
+                            <span>Entrega na Zona Oeste - RJ (taxa a combinar)</span>
                         </div>
                     </div>
                 </div>
@@ -410,7 +465,7 @@
             <div class="text-center mb-16">
                 <h3 class="text-4xl font-bold text-gray-800 mb-4">Como Funciona</h3>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Nosso processo é simples e transparente para garantir que você tenha exatamente o que sonhou
+                    Nosso processo é simples e transparente para garantir que você tenha exatamente o que pediu
                 </p>
             </div>
 
@@ -435,13 +490,14 @@
                     </div>
                     <h4 class="text-xl font-bold text-gray-800 mb-3">Pagamento</h4>
                     <p class="text-gray-600">50% de adiantamento uma semana antes da data de entrega</p>
+                    <p class="text-gray-600">O pagamento restante deve ser feito no ato da entrega!</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
                         <span class="text-2xl font-bold text-white">4</span>
                     </div>
                     <h4 class="text-xl font-bold text-gray-800 mb-3">Entrega</h4>
-                    <p class="text-gray-600">Entregamos na Zona Oeste - RJ ou você pode retirar no local</p>
+                    <p class="text-gray-600">Entregamos na Zona Oeste - RJ (com taxa) ou você pode retirar no local</p>
                 </div>
             </div>
         </div>
@@ -514,7 +570,7 @@
             <div class="text-center mb-16">
                 <h3 class="text-4xl font-bold text-gray-800 mb-4">Faça seu Orçamento</h3>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Preencha o formulário e faça seu orçamento via WhatsApp
+                    Preencha o formulário e receba seu orçamento personalizado via WhatsApp
                 </p>
             </div>
 
@@ -554,7 +610,7 @@
                                 </svg>
                                 <div>
                                     <p class="font-semibold">Trabalhamos apenas com encomendas</p>
-                                    <p class="text-gray-600">Todos os produtos são feitos personalizados no seu tema!</p>
+                                    <p class="text-gray-600">Todos os produtos são feitos no seu tema</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -563,8 +619,8 @@
                                 </svg>
                                 <div>
                                     <p class="font-semibold">Pagamento: 50% de adiantamento</p>
-                                    <p class="text-gray-600">Uma semana antes da data do evento!</p>
-                                    <p class="text-gray-600">O pagamento restante tem que ser feito obrigatóriamente no ato da entrega!</p>
+                                    <p class="text-gray-600">Uma semana antes da data de entrega</p>
+                                    <p class="text-gray-600">Pagamento restante deve ser feito obrigatóriamente no ato da entrega!</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -572,7 +628,7 @@
                                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                                 </svg>
                                 <div>
-                                    <p class="font-semibold">Entrega na Zona Oeste - RJ ( consultar taxa de entrega pelo whatsapp )</p>
+                                    <p class="font-semibold">Entrega na Zona Oeste - RJ (taxa a combinar por whatsapp)</p>
                                     <p class="text-gray-600">Ou retirada no nosso local</p>
                                 </div>
                             </div>
@@ -597,7 +653,7 @@
                                 </a>
                                 <a href="https://instagram.com/personalizadosdasiil0" target="_blank" rel="noopener noreferrer" class="flex items-center text-purple-600 hover:text-purple-700 transition-colors">
                                     <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
                                     </svg>
                                     @personalizadosdasiil0 - Personalizados
                                 </a>
@@ -628,12 +684,12 @@
                         </a>
                         <a href="https://instagram.com/deliciasdasiil23" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-400 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
                             </svg>
                         </a>
                         <a href="https://instagram.com/personalizadosdasiil0" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
                             </svg>
                         </a>
                     </div>
@@ -755,3 +811,4 @@ Gostaria de fazer um orçamento!`;
     </script>
 </body>
 </html>
+
